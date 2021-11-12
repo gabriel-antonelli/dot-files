@@ -1,0 +1,72 @@
+[global_config]
+  title_transmit_bg_color = "#000000"
+  title_receive_bg_color = "#000000"
+  title_inactive_bg_color = "#000000"
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  always_split_with_profile = True
+[keybindings]
+  split_horiz = <Primary>Down
+  split_vert = <Primary>Right
+  close_term = <Primary>k
+  copy = <Primary>c
+  paste = <Primary>v
+[profiles]
+  [[default]]
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = FiraCode NF weight=453 10
+    use_system_font = False
+  [[Solarized Dark Higher Contrast]]
+    background_color = "#001e27"
+    background_darkness = 0.7
+    cursor_color = "#f34b00"
+    font = FiraCode NF weight=453 10
+    foreground_color = "#9cc2c3"
+    palette = "#002831:#d11c24:#6cbe6c:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#006488:#f5163b:#51ef84:#b27e28:#178ec8:#e24d8e:#00b39e:#fcf4dc"
+    use_system_font = False
+  [[Ayu mirage]]
+    background_color = "#212733"
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#FFD580"
+    font = FiraCode NF weight=453 10
+    foreground_color = "#d9d7ce"
+    palette = "#212733:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#3d4752:#3e4b59:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#eeeeec"
+    use_system_font = False
+  [[Molokai]]
+    background_color = "#121212"
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#bbbbbb"
+    font = FiraCode NF weight=453 10
+    foreground_color = "#bbbbbb"
+    palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
+    use_system_font = False
+  [[After Dark]]
+    background_color = "#10111b"
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = FiraCode NF weight=453 10
+    palette = "#2e3436:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#d3d7cf:#555753:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#eeeeec"
+    use_system_font = False
+  [[Argonaut]]
+    background_color = "#0e1019"
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#ff0018"
+    font = FiraCode NF weight=453 10
+    foreground_color = "#fffaf4"
+    palette = "#232323:#ff000f:#8ce10b:#ffb900:#008df8:#6d43a6:#00d8eb:#ffffff:#444444:#ff2740:#abe15b:#ffd242:#0092ff:#9a5feb:#67fff0:#ffffff"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = Argonaut
+[plugins]
