@@ -10,5 +10,5 @@
   - I3 config
   - Dunst config com integração com o PyWal.
   - Picom config(faltando apenas blur)
-  - Rofi config(com https://github.com/adi1090x/rofi) e integração com PyWal
+  - Rofi config(com https://github.com/adi1090x/rofi)
   - Spicetify (com https://github.com/morpheusthewhite/spicetify-themes) e integração com PyWal
