@@ -218,15 +218,44 @@ bindsym Mod1+r mode "resize"
 #######################################################################
 #exec i3-config-wizard
 
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
+bindsym Mod1+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Mod1+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
 #Rofi
 bindcode 133 exec --no-startup-id ~/.config/rofi/bin/launcher_misc
 
 #Picom
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --experimental-backends
 
 #PyWal
-bindsym Mod1+Shift+w exec $HOME/.local/bin/wal -i ~/.wallpapers && spicetify apply -n 
-exec_always --no-startup-id $HOME/.local/bin/wal -i ~/.wallpapers && spicetify apply -n
+bindsym Mod1+Shift+w exec --no-startup-id wal -i ~/.wallpapers && spicetify apply -n && ~/.local/bin/pywalfox update && .config/dunst/launchDunst.sh && pywal-discord
+exec_always --no-startup-id wal -i ~/.wallpapers && spicetify apply -n && ~/.local/bin/pywalfox update && .config/dunst/launchDunst.sh && pywal-discord
+
+#Lxpolkit
+exec_always --no-startup-id lxpolkit
 
 #Polybar
 exec_always --no-startup-id polybar --config=~/.config/polybar/newConfig/config main
+
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/kitty'
+
+## [Basic Autostart]
+exec --no-startup-id spotify
+exec --no-startup-id discord 
+
+## [---Workspaces---]
+set $ws1 "1: Work"
+set $ws2 "2: Music"
+set $ws3 "3: Discord"
+
+## [Assign apps to workspaces]
+for_window  [class="Spotify"]         move to workspace $ws2
+for_window  [class="discord"]         move to workspace $ws3
