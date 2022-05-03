@@ -56,7 +56,7 @@ set $right semicolon
 floating_modifier Mod1
 
 # start a terminal
-bindsym Mod1+Return exec kitty
+bindsym Mod1+t exec kitty
 
 # kill focused window
 bindsym Mod1+Shift+q kill
@@ -68,6 +68,9 @@ bindsym Mod1+d exec --no-startup-id dmenu_run
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
+
+#Alt+Tab
+bindsym Mod1+Tab workspace back_and_forth
 
 # change focus
 bindsym Mod1+$left focus left
@@ -242,20 +245,19 @@ exec_always --no-startup-id wal -i ~/.wallpapers && spicetify apply -n && ~/.loc
 exec_always --no-startup-id lxpolkit
 
 #Polybar
-exec_always --no-startup-id polybar --config=~/.config/polybar/newConfig/config main
+exec_always --no-startup-id sleep 1; polybar --config=~/.config/polybar/newConfig/config main
 
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/kitty'
 
 ## [Basic Autostart]
 exec --no-startup-id spotify
-exec --no-startup-id discord 
+exec --no-startup-id sleep 1; firefox
 
 ## [---Workspaces---]
 set $ws1 "1: Work"
 set $ws2 "2: Music"
-set $ws3 "3: Discord"
+set $ws2 "2: Web"
 
 ## [Assign apps to workspaces]
 for_window  [class="Spotify"]         move to workspace $ws2
-for_window  [class="discord"]         move to workspace $ws3
+for_window  [class="firefox"]         move to workspace $ws3
