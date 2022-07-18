@@ -238,8 +238,8 @@ bindcode 133 exec --no-startup-id ~/.config/rofi/bin/launcher_misc
 exec_always --no-startup-id picom --experimental-backends
 
 #PyWal
-bindsym Mod1+Shift+w exec --no-startup-id wal -i ~/.wallpapers && spicetify apply -n && ~/.local/bin/pywalfox update && .config/dunst/launchDunst.sh && pywal-discord
-exec_always --no-startup-id wal -i ~/.wallpapers && spicetify apply -n && ~/.local/bin/pywalfox update && .config/dunst/launchDunst.sh && pywal-discord
+bindsym Mod1+Shift+w exec --no-startup-id ~/.config/i3/pywal.sh
+exec_always --no-startup-id ~/.config/i3/pywal.sh
 
 #Lxpolkit
 exec_always --no-startup-id lxpolkit
