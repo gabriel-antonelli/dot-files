@@ -248,6 +248,7 @@ exec_always --no-startup-id lxpolkit
 exec_always --no-startup-id sleep 1; polybar --config=~/.config/polybar/newConfig/config main
 
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/kitty'
+exec --no-startup-id i3-msg 'workspace 4; exec google-chrome-stable'
 
 ## [Basic Autostart]
 exec --no-startup-id spotify
@@ -256,7 +257,8 @@ exec --no-startup-id sleep 1; firefox
 ## [---Workspaces---]
 set $ws1 "1: Work"
 set $ws2 "2: Music"
-set $ws2 "2: Web"
+set $ws3 "3: Firefox"
+set $ws4 "4: Chrome"
 
 ## [Assign apps to workspaces]
 for_window  [class="Spotify"]         move to workspace $ws2
